@@ -7,7 +7,7 @@ client_list = []
 def sendAll(msg, source_sock):
     for client_sock in client_list:
         if client_sock != source_sock:
-            client_sock.sendall(msg.encode())
+            client_sock.sendall(msg)
 
 def handleClient(sock, addr):
     welcome_string = f"> New user {addr} entered ({len(client_list)} user{'s' if len(client_list) >= 2 else ''} online)"
